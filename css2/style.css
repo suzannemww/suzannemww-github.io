@@ -1,0 +1,404 @@
+/* MISE EN PLACE */
+
+*{
+	box-sizing: border-box;
+}
+
+html{
+	font-size: 62.5%;
+}
+
+body{
+	font-family: Verdana, Geneva, Tahona, sans-serif;
+	font-size: 1.6rem;
+	line-height: 1.6;
+	color: #555;
+	margin: 0;
+	text-align: center;
+}
+
+h2, h3{
+	color: #000;
+	font-family: 'Frank Ruhl Libre', serif;
+	font-weight: 500;
+	line-height: 1;
+	text-transform: uppercase;
+}
+
+h3{
+	font-size: 2.1rem;
+}
+
+a{
+	text-decoration: none;
+}
+
+img{
+	max-width: 100%;
+	height: auto;
+}
+
+li{
+	margin-bottom: 1rem;
+}
+
+.list-unstyled{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.container{
+	padding: 1rem 2rem;
+}
+
+.d-flex{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.grid{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.grid-item{
+	flex-grow: 1;
+	flex-shrink: 0;
+	width: 100%;
+	padding: 1rem;
+}
+
+/* Format ordinateur */
+@media screen and (min-width:750px){
+	.container{
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 2rem;
+	}
+	.grid-item{
+		max-width: 50%;
+	}
+}
+
+
+/* FORMAT DES SECTIONS */
+
+section{
+	padding: 5.5rem 0;
+}
+
+.section-title{
+	margin-top: 0;
+	font-size: 3.8rem;
+	text-transform: uppercase;
+}
+
+
+/* HEADER */
+
+.header{
+	background-color: #FFF;
+	border-bottom: 1px solid #EEE;
+	position: sticky;
+	top: 0;
+}
+
+.logo{
+	font-family: 'Frank Ruhl Libre', serif;
+	font-weight: 500;
+	font-size: 2rem;
+	letter-spacing: 1.5px;
+}
+
+.header li{
+	display: inline-flex;
+	align-items: center;
+	padding: 0 5px;
+}
+
+.header a{
+	color: #333;
+}
+
+.header a:hover{
+	color: #209CEE;
+}
+
+.header .right{
+	display: flex;
+	align-items: center;
+}
+
+.burger{
+	background: none;
+	border: none;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	position: relative;
+}
+
+.burger .bar{
+	display: block;
+	width: 22px;
+	height: 3px;
+	background : #333;
+}
+
+.burger .bar::before, .burger .bar::after{
+	display: block;
+	content: "";
+	width: 22px;
+	height: 3px;
+	background: #333;
+	position: absolute;
+}
+
+.burger .bar::before{
+	transform: translateY(-8px);
+}
+
+.burger .bar::after{
+	transform: translateY(8px);
+}
+
+/* Format mobile */
+@media screen and (max-width:749px){
+	.navbar{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		position: fixed;
+		top: 55px;
+		left: 110%;
+		width: 0;
+		overflow: hidden;
+		opacity: 0;
+		height: calc(100vh - 55px);
+		background: #F5F5F5;
+		transition: all .4s ease-out;
+	}
+	.navbar li{
+		display: flex;
+		justify-content: center;
+	}
+	.navbar a{
+		display: block;
+		font-size: 2rem;
+		padding: 2rem;
+	}
+	.show-nav nav{
+		opacity: 1;
+		width: 100%;
+		left: 0;
+		z-index: 1;
+	}
+}
+
+/* Format ordinateur */
+@media screen and (min-width:750px){
+	.navbar{
+		display: flex;
+		position: absolute;
+		right: 10px;
+		top: 23px;
+	}
+	.burger{
+		display: none;
+	}
+}
+
+
+/* PRESENTATION */
+
+.presentation{
+	background-color: #F5F5F5;
+}
+
+.presentation .a-propos{
+	text-align: justify;
+}
+
+.presentation .interet{
+	display: flex;
+}
+
+.interet-icon{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 60px;
+	height: 60px;
+	border: 2px solid #000;
+	border-radius: 50%;
+	margin-bottom: 1rem;
+	margin-right: 2rem;
+}
+
+.interet-icon img{
+	height: 35px;
+}
+
+/* Format ordinateur */
+@media screen and (min-width:750px){
+	.presentation .left{
+		width: 60%;
+		padding-right: 40px;
+		border-right: 1px solid #CCC;
+	}
+	
+	.presentation .right{
+		padding-left: 40px;
+	}
+}
+
+
+/* DIPLOMES */
+
+/* Format ordinateur */
+@media screen and (min-width:750px){
+	.diplomes .grid-item{
+		width: 33.3333%;
+	}
+	.diplomes .border-left{
+		border-left: 1px solid #CCC;
+	}
+}
+
+
+/* COMPETENCES */
+
+.competences{
+	background-color: #F5F5F5;
+}
+
+.competence-icon{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 90px;
+	height: 90px;
+	border: 2px solid #000;
+	border-radius: 50%;
+}
+
+.competence-icon img{
+	height: 35px;
+}
+
+.competence-content{
+	flex: 1;
+}
+
+.competence h3{
+	margin-bottom: 0;
+}
+
+.competence li{
+	text-align: left;
+}
+
+/* Format mobile */
+@media screen and (max-width:749px){
+	.competences .grid-item{
+		padding-bottom: 0;
+	}
+	.competence{
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+	.competence-icon{
+		margin: 0 auto;
+	}
+}
+
+/* Format ordinateur */
+@media screen and (min-width:750px){
+	.competence h3{
+		text-align: left;
+	}
+	.competence{
+		display: flex;
+		align-items: center;
+		min-height: 50%;
+	}
+	.competence-icon{
+		margin-right: 2rem;
+	}
+	.competences .grid-item{
+		min-width: 100%;
+	}
+}
+
+
+/* PROJETS */
+
+.projets .grid-item{
+	margin-bottom: 20px;
+}
+
+.card{
+	background-color: #F5F5F5;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.card-image{
+	width: 100%;
+}
+
+.card-inner{
+	padding: 2rem 2rem 0 2rem;
+}
+
+.pres-proj{
+	text-align: justify;
+	padding : 0 3rem;
+}
+
+.pres-proj ul{
+	margin: 0;
+}
+
+.pres-proj a{
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	color: #555;
+	text-decoration: underline;
+	font-style: italic;
+}
+
+/* Format ordinateur */
+@media screen and (min-width:750px){
+	.projets .grid-item {
+		width: calc(50% - 10px);
+	}
+}
+
+
+/* FOOTER */
+
+footer{
+	background-color: #000;
+	color: #FFF;
+	padding-top: 5rem;
+}
+
+footer h2{
+	color: #FFF;
+}
+
+footer a{
+	color: white;
+	font-style: italic;
+}
+
+@media screen and (min-width:750px){
+	footer .grid-item {
+		max-width: 33.3333%;
+	}
+}
